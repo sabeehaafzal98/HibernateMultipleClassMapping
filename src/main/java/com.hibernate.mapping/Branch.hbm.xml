@@ -1,0 +1,13 @@
+<hibernate-mapping package="com.example.hibernate">
+    <class name="Branch" table="branches">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="name"/>
+
+        <set name="students" inverse="true" cascade="all">
+            <key column="branch_id"/>
+            <one-to-many class="Student"/>
+        </set>
+    </class>
+</hibernate-mapping>

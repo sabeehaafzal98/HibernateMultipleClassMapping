@@ -16,3 +16,11 @@ Student	Many-to-Many	Course
 University	One-to-Many	Student
 Branch	One-to-Many	Student
 Course	Many-to-Many	Student
+
+
+
+Course --Many-to-Many-- Student ---Many-to-one-- University
+                          |||
+                        Many-to-One
+                          |||
+                         Branch

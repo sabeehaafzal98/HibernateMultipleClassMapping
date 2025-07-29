@@ -26,6 +26,15 @@
         <!-- Automatically create/drop tables -->
         <property name="hbm2ddl.auto">update</property>
 
+
+
+
+        <mapping resource="Branch.hbm.xml"/>
+        <mapping resource="Course.hbm.xml"/>
+        <mapping resource="Student.hbm.xml"/>
+        <mapping resource="University.hbm.xml"/>
+
+
         <!-- Mapping class -->
         <mapping class="com.hibernate.mapping.Student"/>
         <mapping class="com.hibernate.mapping.Course"/>

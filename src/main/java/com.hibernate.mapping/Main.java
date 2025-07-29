@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
 
 
         Server.createWebServer("-web", "-webAllowOthers", "-webPort", "8081").start();
@@ -45,6 +45,18 @@ public class Main {
         session.save(course2);
         session.save(student);
         session.getTransaction().commit();
+
+
+
+        System.out.println("App is running. Press Enter to exit...");
+        System.in.read(); // Keeps the app alive until you press Enter
+
+//16:22:33.550 [main] INFO org.hibernate.orm.connections.pooling --
+// HHH10001008: Cleaning up connection pool [jdbc:h2:mem:studentdb]
+       /* you're using an in-memory H2 database (mem:studentdb).
+        When your main() method completes, Hibernate shuts down, and the database is destroyed.
+        So when you try to access the H2 console after that, it can't find the database — hence the error.
+*/
 
         session.close();
         factory.close();

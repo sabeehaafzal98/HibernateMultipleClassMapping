@@ -3,8 +3,6 @@ package com.hibernate.mapping;
 import java.util.Set;
 
 public class University {
-
-
     private int id;
     private String name;
     private Set<Student> students;
